@@ -1,0 +1,50 @@
+ANALISI FITS - noise reduction e sottrazione del fondo
+=====================================================
+
+Contenuto di questa cartella
+----------------------------
+  analisi_fits.py              il programma (finestra per Ubuntu e Windows 11)
+  crea_eseguibile_ubuntu.sh    crea l'eseguibile per Ubuntu
+  crea_eseguibile_windows.bat  crea AnalisiFITS.exe per Windows 11
+
+Creare l'eseguibile (una sola volta per sistema operativo)
+---------------------------------------------------------
+L'eseguibile finale si apre con un doppio clic e non richiede Python,
+JupyterLab o altri pacchetti. Python serve SOLO durante la creazione,
+e lo script lo gestisce da solo in un ambiente temporaneo che poi cancella.
+
+UBUNTU - nel terminale:
+    cd ~/Claude/Astropy/programma_analisi_fits
+    bash crea_eseguibile_ubuntu.sh
+  Alla fine: "Analisi FITS" nel menu delle applicazioni e un'icona sulla
+  Scrivania (la prima volta: tasto destro -> "Consenti avvio").
+
+WINDOWS 11:
+  1) installa Python da https://www.python.org spuntando "Add python.exe to PATH"
+  2) copia questa cartella sul PC Windows
+  3) doppio clic su crea_eseguibile_windows.bat
+  Alla fine: AnalisiFITS.exe nella cartella e un collegamento sul Desktop.
+  L'exe si può copiare su altri PC Windows senza installare nulla.
+
+Note
+  - Un eseguibile creato su Ubuntu funziona solo su Linux, quello creato su
+    Windows solo su Windows: va creato una volta su ciascun sistema.
+  - All'avvio l'eseguibile impiega qualche secondo (decomprime le librerie).
+  - Se qualcosa non funziona, gli errori sono nel file ~/.analisi_fits.log
+    (su Windows: C:\Users\<nome>\.analisi_fits.log).
+
+Dimensione del testo
+--------------------
+Pulsanti A− / A+ in alto a sinistra, oppure Ctrl + / Ctrl − / Ctrl 0.
+Lo zoom, i parametri e l'ultima cartella vengono ricordati al riavvio.
+
+Comandi rapidi durante la scelta
+  clic = seleziona   |   doppio clic oppure Invio = seleziona e conferma
+  doppio clic su un file della lista = avvia l'analisi di quel file
+
+Risultati
+---------
+In <cartella dei FITS>/risultati_analisi/:
+  valori_scelti.csv           una riga per file (separatore ';', si apre con Excel)
+  <nome>_noise_reduction.png  griglia con la scelta evidenziata in rosso
+  <nome>_fondo.png
